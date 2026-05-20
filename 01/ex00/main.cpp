@@ -10,17 +10,3 @@ int main()
 	delete heapZom;
 	return(0);
 }
-/*
-int main()
-{
-	Zombie *heapZom;
-
-	randomChump("stackZombie");
-	std::cin.get();
-	heapZom = newZombie("heapZombie");
-	heapZom->announce();
-	std::cin.get();
-	delete heapZom;
-	return(0);
-}
-*/
