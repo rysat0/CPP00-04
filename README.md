@@ -4,13 +4,13 @@ This repository contains my work, notes, and subject PDFs for the 42 C++ modules
 
 ## Overview
 
-The C++ modules at 42 introduce object-oriented programming and core C++ concepts step by step.  
+The C++ modules at 42 introduce object-oriented programming and core C++ concepts step by step.
 All exercises in this cursus are expected to be compiled with the C++98 standard.
 
 Recommended compilation flags:
 
 ```bash
-c++ -Wall -Wextra -Werror -std=c++98
+c++ -Wall -Wextra -Werror -std=c++98 -pedantic
 ```
 
 ## Repository Structure
@@ -40,7 +40,7 @@ This exercise is a small introduction to:
 - No C-style memory management functions such as `malloc` or `free`
 - No `printf`
 - Prefer C++ standard library features and `std::` names
-- Keep compatibility with `-std=c++98`
+- Keep compatibility with `-std=c++98 -pedantic`
 
 ## Goal
 
