@@ -45,12 +45,12 @@ ClapTrap& ClapTrap::operator = (const ClapTrap& other)
 
 void ClapTrap::attack(const std::string &target)
 {
-	if(this->_hitPoints <= 0)
+	if(this->_hitPoints == 0)
 	{
 		std::cout << "ClapTrap " << this->_name << " can't move due to low Hit Points." << std::endl;
 		return;
 	}
-	else if(this->_energyPoint <= 0)
+	else if(this->_energyPoint == 0)
 	{
 		std::cout << "ClapTrap " << this->_name << " can't move due to low Energy Points." << std::endl;
 		return;
@@ -66,25 +66,28 @@ void ClapTrap::attack(const std::string &target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout << "ClapTrap " << this->_name << "is attacked, " << amount << "points decreased" << std::endl;
+	std::cout << "ClapTrap " << this->_name << " is attacked, " << amount << " points decreased" << std::endl;
 	if(amount > this->_hitPoints)
 	{
 		this->_hitPoints = 0;
-		std::cout << "ClapTrap " << this->_name << "'s HitPoint is now at 0" << std::endl;
+		std::cout << "ClapTrap " << this->_name << "'s Hit Points is now at 0" << std::endl;
 	}
 	else
+	{
 		this->_hitPoints = this->_hitPoints - amount;
-		std::cout << "ClapTrap " << this->_name << "'s HitPoint is now at " << this->_hitPoints << std::endl;
+		std::cout << "ClapTrap " << this->_name << "'s Hit Points is now at " << this->_hitPoints << std::endl;
+	}
 }
+
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if(this->_hitPoints <= 0)
+	if(this->_hitPoints == 0)
 	{
 		std::cout << "ClapTrap " << this->_name << " can't move due to low Hit Points." << std::endl;
 		return;
 	}
-	else if(this->_energyPoint <= 0)
+	else if(this->_energyPoint == 0)
 	{
 		std::cout << "ClapTrap " << this->_name << " can't move due to low Energy Points." << std::endl;
 		return;
@@ -93,6 +96,6 @@ void ClapTrap::beRepaired(unsigned int amount)
 	{
 		(this->_energyPoint)--;
 		this->_hitPoints = this->_hitPoints + amount;
-		std::cout << "ClapTrap" << this->_name << "'s HP heals, now at a " << this->_hitPoints << std::endl;
+		std::cout << "ClapTrap " << this->_name << "'s HP heals, now at " << this->_hitPoints << std::endl;
 	}
 }
