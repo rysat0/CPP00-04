@@ -1,31 +1,19 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
 
-    ClapTrap test1("alex");
-    ClapTrap test2("bob");
+    ClapTrap crap1("alex");
 
-    test1.attack("bob");
-    test1.attack("air");
-    test1.attack("ground");
-    int i = 0;
-    while(i < 7)
-    {
-        test1.attack("fight!");
-        i++;
-    }
+    ScavTrap scav1();
+    ScavTrap scav2("alexa");
+    ScavTrap scav3(scav2);
 
-    test1.attack("air");
-    test1.beRepaired(10);
+    scav1 = scav3;
 
-    test2.takeDamage(150);
-    test2.attack("air");
-    test2.beRepaired(10);
+    scav2.attack(scav4);
 
-    ClapTrap test3(test1);
-    ClapTrap test4;
 
-    test4 = test3;
     return 0;
 }
