@@ -25,10 +25,10 @@ Cat::Cat(std::string type)
 Cat::Cat(const Cat& other)
 {
 	this->type = other.type;
-	std::cout << "Cat Copy Constructor Called";
+	std::cout << "Cat Copy Constructor Called" << std::endl;
 }
 
-Cat& Cat::operator = (Cat& other)
+Cat& Cat::operator = (const Cat& other)
 {
 	if(this != &other)
 		this->type = other.type;

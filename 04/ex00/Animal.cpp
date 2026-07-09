@@ -25,7 +25,7 @@ Animal::Animal(std::string type)
 Animal::Animal(const Animal& other)
 {
 	this->type = other.type;
-	std::cout << "Animal Copy Constructor Called";
+	std::cout << "Animal Copy Constructor Called" << std::endl;
 }
 
 Animal& Animal::operator = (const Animal& other)

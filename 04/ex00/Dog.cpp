@@ -25,10 +25,10 @@ Dog::Dog(std::string type)
 Dog::Dog(const Dog& other)
 {
 	this->type = other.type;
-	std::cout << "Dog Copy Constructor Called";
+	std::cout << "Dog Copy Constructor Called" << std::endl;
 }
 
-Dog& Dog::operator = (Dog& other)
+Dog& Dog::operator = (const Dog& other)
 {
 	if(this != &other)
 		this->type = other.type;
