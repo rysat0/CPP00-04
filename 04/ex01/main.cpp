@@ -1,44 +1,63 @@
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
-
-
 
 int main()
 {
 	const Animal* meta = new Animal();
 	const Animal* doggo = new Dog();
-	const Animal* catto = new Cat();
+	const Animal* cattie = new Cat();
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
+	std::cout << cattie->getType() << " " << std::endl;
+	std::cout << doggo->getType() << " " << std::endl;
+	cattie->makeSound();
+	doggo->makeSound();
 	meta->makeSound();
 
-	const WrongAnimal* wrong = new WrongCat();
+	delete meta;
+	delete cattie;
+	delete doggo;
 
-	std::cout << wrong->getType() << std::endl;
-	wrong->makeSound();
+	const int size = 4;
+	Animal* animals[size];
+	int i;
 
-	WrongCat directWrongCat;
-	directWrongCat.makeSound();
+	i = 0;
+	while (i < size / 2)
+	{
+		animals[i] = new Dog();
+		i++;
+	}
+
+	while (i < size)
+	{
+		animals[i] = new Cat();
+		i++;
+	}
+
+	i = 0;
+	while (i < size)
+	{
+		animals[i]->makeSound();
+		i++;
+	}
+
+	i = 0;
+	while (i < size)
+	{
+		delete animals[i];
+		i++;
+	}
 
 	Dog dog;
 	Dog dogCopy(dog);
+
 	Cat cat;
 	Cat catCopy;
-
 	catCopy = cat;
+
 	std::cout << dogCopy.getType() << std::endl;
 	std::cout << catCopy.getType() << std::endl;
 
-	delete wrong;
-	delete meta;
-	delete j;
-	delete i;
-
-	return 0;
+	return (0);
 }

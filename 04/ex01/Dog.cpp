@@ -14,8 +14,8 @@ Dog::Dog()
 
 Dog::~Dog()
 {
-	delete this->brain;
 	std::cout << "Dog Destructor Called" << std::endl;
+	delete this->brain;
 }
 
 Dog::Dog(std::string type)

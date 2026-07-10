@@ -14,8 +14,8 @@ Cat::Cat()
 
 Cat::~Cat()
 {
-	delete this->brain;
 	std::cout << "Cat Destructor Called" << std::endl;
+	delete this->brain;
 }
 
 Cat::Cat(std::string type)
